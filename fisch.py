@@ -52,7 +52,7 @@ class FischHttpHandler(BaseHTTPRequestHandler):
             try:
                 parsed = parse_qs(post_data.decode('utf-8'))
                 with open(FischHttpHandler.OUTFILE, "a") as out:
-                    out.write("[{}] {}".format(datetime.now(), str(parsed)))
+                    out.write("[{}] {}\n".format(datetime.now(), str(parsed)))
             except Exception as ex:
                 logging.error(ex)
 
