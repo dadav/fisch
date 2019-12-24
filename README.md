@@ -1,3 +1,7 @@
+# requirements
+- hostapd
+- dnsmasq
+
 # install
 ```shell
 git clone https://github.com/dadav/fisch.git
