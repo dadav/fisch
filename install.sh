@@ -6,3 +6,4 @@ cp fisch.service /etc/systemd/system/
 mkdir -p /usr/local/bin/
 cp fisch.py /usr/local/bin/fisch
 chmod a+x /usr/local/bin/fisch
+systemctl daemon-reload
