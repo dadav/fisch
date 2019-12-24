@@ -1,0 +1,9 @@
+[Unit]
+Description=Starts fisch program
+
+[Service]
+ExecStart=/usr/local/bin/fisch --html-file /usr/local/share/fisch/example.html --output-file /usr/local/share/fisch/creds.txt --iface wlan0 --ssid FreeWifi
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
