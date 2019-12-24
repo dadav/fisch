@@ -4,6 +4,7 @@ import os
 import argparse
 import subprocess
 import logging
+from datetime import datetime
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs
 
@@ -51,7 +52,7 @@ class FischHttpHandler(BaseHTTPRequestHandler):
             try:
                 parsed = parse_qs(post_data.decode('utf-8'))
                 with open(FischHttpHandler.OUTFILE, "a") as out:
-                    out.write(parsed)
+                    out.write("[{}] {}".format(datetime.now(), str(parsed)))
             except Exception as ex:
                 logging.error(ex)
 
