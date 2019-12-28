@@ -4,10 +4,8 @@
 
 # install
 ```shell
-apt-get install -y hostapd dnsmasq
-git clone https://github.com/dadav/fisch.git
-cd fisch
-./install.sh
+make deps
+make install
 ```
 
 # usage
